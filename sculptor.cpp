@@ -23,6 +23,19 @@ for(i=0;i<_nx;i++){
 }
 
 }
+
+Sculptor::~Sculptor(){
+    int i,j;
+    Voxel ***v;
+    for(i=0;i<nx;i++){
+     for(j=0;j<ny;j++){
+         delete[] v[i][j];
+    }
+     delete[] v[i];
+    }
+    delete [] v;
+ cout << "Encerrado." << endl;
+}
 // Construtor com argumentos - Recebe as dimensões do Voxel e as coordenadas do mesmo.
 
 void Sculptor::setColor(float r, float g, float b, float alpha){
